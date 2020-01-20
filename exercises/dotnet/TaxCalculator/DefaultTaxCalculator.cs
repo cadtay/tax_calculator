@@ -60,7 +60,6 @@ namespace TaxCalculator
                         Select(xx => xx.Value).FirstOrDefault();
 
                     price = vehicle.Co2Emissions > 255 ? 2070 : price;
-
                     break;
 
                 case FuelType.AlternativeFuel:
@@ -83,6 +82,8 @@ namespace TaxCalculator
                     price = vehicle.Co2Emissions > 255 ? 2060 : price;
                     break;
 
+                case FuelType.Electric:
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
