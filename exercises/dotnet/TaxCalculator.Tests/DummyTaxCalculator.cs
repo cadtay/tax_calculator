@@ -9,5 +9,10 @@ namespace TaxCalculator.Tests
         {
             return -1;
         }
+
+        public override int TaxCal(Vehicle vehicle)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
