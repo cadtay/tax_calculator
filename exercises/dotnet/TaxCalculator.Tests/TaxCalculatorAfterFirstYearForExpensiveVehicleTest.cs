@@ -19,7 +19,7 @@ namespace TaxCalculator.Tests
         public void WhenVehicleUsesPetrolAndPriceIsOver40K()
         {
             Vehicle vehicle = new Vehicle(206, FuelType.Petrol, FirstOfApril2017, 50000);
-            int tax = _taxCalculator.CalculateTax(vehicle);
+            int tax = _taxCalculator.TaxCal(vehicle);
             Assert.AreEqual(450, tax);
         }
 
@@ -27,7 +27,7 @@ namespace TaxCalculator.Tests
         public void WhenVehicleIsElectricAndPriceIsOver40K()
         {
             Vehicle vehicle = new Vehicle(206, FuelType.Electric, FirstOfApril2017, 50000);
-            int tax = _taxCalculator.CalculateTax(vehicle);
+            int tax = _taxCalculator.TaxCal(vehicle);
             Assert.AreEqual(310, tax);
         }
 
@@ -35,7 +35,7 @@ namespace TaxCalculator.Tests
         public void WhenVehicleUsesAlternativeFuelAndPriceIsOver40K()
         {
             Vehicle vehicle = new Vehicle(206, FuelType.AlternativeFuel, FirstOfApril2017, 50000);
-            int tax = _taxCalculator.CalculateTax(vehicle);
+            int tax = _taxCalculator.TaxCal(vehicle);
             Assert.AreEqual(440, tax);
         }
 

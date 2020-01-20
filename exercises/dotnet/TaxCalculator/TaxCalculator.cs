@@ -10,7 +10,7 @@ namespace TaxCalculator
 
         public abstract int TaxCal(Vehicle vehicle);
 
-        public abstract int AltFuelCalc(Vehicle vehicle);
+        
 
         protected TaxCalculator() : this(DateTime.Now.Year)
         {
