@@ -80,21 +80,21 @@ namespace TaxCalculator
                 case FuelType.Diesel:
                     dict.Add(0,0);
                     dict.Add(50, 25);
-                    dict.Add(75, 105);
-                    dict.Add(90, 125);
-                    dict.Add(100, 145);
-                    dict.Add(110, 165);
-                    dict.Add(130, 205);
-                    dict.Add(150, 515);
-                    dict.Add(170, 830);
-                    dict.Add(190, 1240);
-                    dict.Add(225, 1760);
-                    dict.Add(255, 2070);
+                    dict.Add(75, 110);
+                    dict.Add(90, 130);
+                    dict.Add(100, 150);
+                    dict.Add(110, 170);
+                    dict.Add(130, 210);
+                    dict.Add(150, 530);
+                    dict.Add(170, 855);
+                    dict.Add(190, 1280);
+                    dict.Add(225, 1815);
+                    dict.Add(255, 2135);
 
                     price = dict.Where(x => vehicle.Co2Emissions <= x.Key).
                         Select(xx => xx.Value).FirstOrDefault();
 
-                    price = vehicle.Co2Emissions > 255 ? 2070 : price;
+                    price = vehicle.Co2Emissions > 255 ? 2135 : price;
                     break;
 
                 case FuelType.AlternativeFuel:
