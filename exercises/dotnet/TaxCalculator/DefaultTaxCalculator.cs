@@ -49,17 +49,9 @@ namespace TaxCalculator
 
             if (vehicle.DateOfFirstRegistration.DayOfYear - DateTime.Now.DayOfYear > 1)
             {
-                switch (vehicle.FuelType)
-                {
-                    case FuelType.Petrol:
-                       return price = 140;
+                price = vehicle.FuelType == FuelType.Petrol ? 140 : 130;
 
-                    case FuelType.Electric:
-                       return price = 0;
-                    
-                    case FuelType.AlternativeFuel:
-                      return price = 130;
-                }
+                return vehicle.FuelType == FuelType.Electric ? 0 : price;
             }
 
 
