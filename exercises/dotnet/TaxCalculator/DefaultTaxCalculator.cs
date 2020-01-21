@@ -28,7 +28,23 @@ namespace TaxCalculator
 
             if(_story5Toggle == true)
             {
+                if (vehicle.ListPrice > 40000)
+                {
+                    switch (vehicle.FuelType)
+                    {
+                        case FuelType.Petrol:
+                            return price = 450;
 
+                        case FuelType.Diesel:
+                            return price = 450;
+
+                        case FuelType.Electric:
+                            return price = 310;
+
+                        case FuelType.AlternativeFuel:
+                            return price = 440;
+                    }
+                }
             }
 
             if (vehicle.DateOfFirstRegistration.DayOfYear - DateTime.Now.DayOfYear > 1)
