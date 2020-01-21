@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using System.Net.Http.Headers;
+
 
 namespace TaxCalculator
 {
    public class DefaultTaxCalculator : TaxCalculator
     {
         
-
         public override int CalculateTax(Vehicle vehicle)
         {
             throw new NotImplementedException();
@@ -18,6 +18,22 @@ namespace TaxCalculator
         {
             var dict = new Dictionary<int, int>();
             var price = 0;
+
+            if (vehicle.DateOfFirstRegistration.DayOfYear - DateTime.Now.DayOfYear > 1)
+            {
+                switch (vehicle.FuelType)
+                {
+                    case FuelType.Petrol:
+                       return price = 140;
+
+                    case FuelType.Electric:
+                       return price = 0;
+                    
+                    case FuelType.AlternativeFuel:
+                      return price = 130;
+                }
+            }
+
 
             switch (vehicle.FuelType)
             {
@@ -42,7 +58,6 @@ namespace TaxCalculator
                     break;
 
                 case FuelType.Diesel:
-
                     dict.Add(0,0);
                     dict.Add(50, 25);
                     dict.Add(75, 105);
@@ -91,5 +106,4 @@ namespace TaxCalculator
         }
     }
 
-    
 }
