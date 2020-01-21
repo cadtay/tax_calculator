@@ -8,6 +8,13 @@ namespace TaxCalculator
 {
    public class DefaultTaxCalculator : TaxCalculator
     {
+
+        private bool _story5Toggle = false;
+
+        public DefaultTaxCalculator(bool story5Toggle)
+        {
+            _story5Toggle = story5Toggle;
+        }
         
         public override int CalculateTax(Vehicle vehicle)
         {
@@ -18,6 +25,11 @@ namespace TaxCalculator
         {
             var dict = new Dictionary<int, int>();
             var price = 0;
+
+            if(_story5Toggle == true)
+            {
+
+            }
 
             if (vehicle.DateOfFirstRegistration.DayOfYear - DateTime.Now.DayOfYear > 1)
             {
